@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+@import 'reset';
+@import 'variable';
+@import 'mixin';
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+main.mainContainer {
+	width: 100vw;
+	height: 100vh;
+	@include flexRow();
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background: radial-gradient(#525658, 60%, #0d0e10);
+	h1.h1Title {
+		width: 100%;
+		height: 10%;
+		@include flexRow();
+		color: $white;
+		font-size: 3vw;
+	}
+	section {
+	}
+	section.sectionClockContainer {
+		width: 50%;
+		height: 80%;
+		@include flexRow();
+		article.articleClockContainer {
+			width: 50vw;
+			height: 50vw;
+			margin-bottom: 6vw;
+			@include flexCol();
+			background-image: url(../images/watch.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: 50% 50%;
+			.divTodayContainer {
+				margin-bottom: 3vw;
+				padding: 0.5vw 1vw;
+				border: 0.2vw inset $lightGray;
+				border-radius: 1vw;
+				background-color: #9ea89d;
+				color: #040000;
+				.divToday {
+					font-size: 1.2vw;
+					margin-bottom: 1vw;
+				}
+				.divCurrentTime {
+					font-size: 1.5vw;
+					font-weight: bold;
+				}
+			}
+			.divStopWatch {
+				margin-bottom: 3vw;
+				padding: 0.5vw 1vw;
+				border: 0.2vw inset $lightGray;
+				border-radius: 1vw;
+				background-color: #9ea89d;
+				color: #040000;
+				font-size: 2vw;
+			}
+		}
+	}
+	section.sectionLabContainer {
+		width: 50%;
+		height: 80%;
+		@include flexCol();
+		justify-content: space-around;
+		article.articleButtonContainer {
+			width: 100%;
+			height: 20%;
+			@include flexRow();
+			button {
+				width: 30%;
+				padding: 0.5vw 0;
+				border: 0.2vw solid $black;
+				border-radius: 1vw;
+				background-color: #9ea89d;
+				color: #040000;
+				font-size: 2vw;
+			}
+			button.buttonFuncChange:first-child {
+				margin-right: 2.5vw;
+			}
+		}
+		nav.navSectionTimeContainer {
+			width: 100%;
+			height: 40%;
+			@include flexRow();
+			ul {
+				width: 70%;
+				height: 100%;
+				@include flexCol();
+				justify-content: flex-start;
+				border: 0.2vw solid $black;
+				border-radius: 1vw;
+				background-color: #9ea89d;
+				color: #040000;
+				overflow-x: auto;
+				li {
+					width: 100%;
+					height: 15%;
+					padding: 1vw 2vw;
+					@include flexRow();
+					justify-content: space-between;
+					font-size: 1.5vw;
+					span {
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
